@@ -1,0 +1,28 @@
+﻿@page
+@model Pitka_Projekti_Front.Pages.DeleteModel
+@{
+    ViewData["Title"] = "Delete page";
+}
+
+<form method="post">
+
+    <input hidden asp-for="TaskModels.id" />
+    <div class="border p-3 mt-4" style="width:50%">
+        <div class="row pb-2">
+            <h2 class="text-primary pl-3">Delete Task</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="TaskModels.header" class="h5"></label><br />
+            <input type="text" asp-for="TaskModels.header" class="form-control rounded" disabled />
+            <span asp-validation-for="TaskModels.header" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="TaskModels.description" class="h5"></label><br />
+            <textarea asp-for="TaskModels.description" class="form-control rounded" rows="4" disabled></textarea>
+            <span asp-validation-for="TaskModels.description" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-danger " style="width:150px;">Delete</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width:150px;">Cancel</a>
+    </div>
+</form>

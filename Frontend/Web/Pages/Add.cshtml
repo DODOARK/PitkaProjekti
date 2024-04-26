@@ -1,0 +1,27 @@
+﻿@page
+@model Pitka_Projekti_Front.Pages.AddModel
+@{
+    ViewData["Title"] = "Add New Tasks";
+}
+
+<form method="post">
+    <input hidden asp-for="TaskModels.id" />
+    <div class="border p-3 mt-4 rounded" style="width:50%">
+        <div class="row pb-2">
+            <h2 class="text-primary pl-3">Add Task</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="TaskModels.header" class="h5"></label><br />
+            <input type="text" asp-for="TaskModels.header" class="form-control rounded" />
+            <span asp-validation-for="TaskModels.header" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="TaskModels.description" class="h5"></label><br />
+            <textarea asp-for="TaskModels.description" class="form-control rounded" rows="4"></textarea>
+            <span asp-validation-for="TaskModels.description" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px;">Add</button>
+        <a asp-page="Index" class="btn btn-danger" style="width:150px;">Cancel</a>
+    </div>
+</form>
